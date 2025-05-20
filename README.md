@@ -134,14 +134,14 @@ A RESTful API built with Node.js, Express, and MongoDB for managing books and re
 ```
 
 **Logout**  
-`POST /auth/logout` (Requires valid JWT)
+`GET /auth/logout` (Requires valid JWT)
 
 ---
 
 ### Book Endpoints
 
 **Create Book**  
-`POST /api/books` (Authenticated)
+`POST /books` (Authenticated)
 ```json
 {
   "title": "Sample Book",
@@ -151,20 +151,20 @@ A RESTful API built with Node.js, Express, and MongoDB for managing books and re
 ```
 
 **List Books**  
-`GET /api/books?page=1&limit=10&genre=Fiction&author=userId`
+`GET /books?page=1&limit=10&genre=Fiction&author=userId`
 
 **Get Book Details**  
-`GET /api/books/:id?reviewPage=1&reviewLimit=5`
+`GET /books/:id?reviewPage=1&reviewLimit=5`
 
 **Search Books**  
-`GET /api/books/search?q=search+term`
+`GET /books/search?q=search+term`
 
 ---
 
 ### Review Endpoints
 
 **Add Review**  
-`POST /api/books/:bookId/reviews` (Authenticated)
+`POST /books/:id/reviews` (Authenticated)
 ```json
 {
   "rating": 5,
@@ -173,7 +173,7 @@ A RESTful API built with Node.js, Express, and MongoDB for managing books and re
 ```
 
 **Update Review**  
-`PUT /api/reviews/:reviewId` (Authenticated)
+`PUT /reviews/:id` (Authenticated)
 ```json
 {
   "rating": 4,
@@ -182,7 +182,7 @@ A RESTful API built with Node.js, Express, and MongoDB for managing books and re
 ```
 
 **Delete Review**  
-`DELETE /api/reviews/:reviewId` (Authenticated)
+`DELETE /reviews/:id` (Authenticated)
 
 ---
 
